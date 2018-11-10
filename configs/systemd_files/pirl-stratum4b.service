@@ -1,0 +1,12 @@
+
+[Unit]
+Description=pirl-stratum4b
+
+[Service]
+Type=simple
+ExecStart=/home/centos/pirltestpool/build/bin/open-pirl-pool /home/centos/pirltestpool/configs/stratum4b.json
+User=centos
+
+[Install]
+WantedBy=multi-user.target
+

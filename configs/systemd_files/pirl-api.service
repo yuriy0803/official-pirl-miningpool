@@ -1,0 +1,12 @@
+
+[Unit]
+Description=pirl-api
+
+[Service]
+Type=simple
+ExecStart=/home/centos/pirltestpool/build/bin/open-pirl-pool /home/centos/pirltestpool/configs/api.json
+User=centos
+
+[Install]
+WantedBy=multi-user.target
+

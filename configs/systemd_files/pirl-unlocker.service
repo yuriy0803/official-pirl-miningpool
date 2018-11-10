@@ -1,0 +1,13 @@
+
+[Unit]
+Description=pirl-unlocker
+
+
+[Service]
+Type=simple
+ExecStart=/home/centos/pirltestpool/build/bin/open-pirl-pool /home/centos/pirltestpool/configs/unlocker.json
+User=centos
+
+[Install]
+WantedBy=multi-user.target
+
