@@ -5,7 +5,7 @@ server {
         root /home/pirl/www;
         index index.html index.htm index.nginx-debian.html;
 
-        server_name pirl.cryptopools.info;
+        server_name testnetpool.pirl.io;
 
         location / {
                 try_files $uri $uri/ =404;
