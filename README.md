@@ -44,8 +44,8 @@ This will install the latest nodejs
 
 ### Install  Pool
 
-    $ git clone https://github.com/phatblinkie/pirl.cryptopools.info.git
-    $ cd pirl.cryptopools.info
+    $ git clone https://github.com/phatblinkie/official-pirl-testnet-pool.git
+    $ cd official-pirl-testnet-pool
     $ make all
     $ ls build/bin/
 
@@ -217,7 +217,7 @@ presetup configs are in configs directory, edit to suit your needs
     // Run unlocker in this interval
     "interval": "10m",
     // Geth instance node rpc endpoint for unlocking blocks
-    "daemon": "http://127.0.0.1:8545",
+    "daemon": "http://127.0.0.1:6588",
     // Rise error if can't reach geth in this amount of time
     "timeout": "10s"
   },
@@ -230,7 +230,7 @@ presetup configs are in configs directory, edit to suit your needs
     // Run payouts in this interval
     "interval": "12h",
     // Geth instance node rpc endpoint for payouts processing
-    "daemon": "http://127.0.0.1:8545",
+    "daemon": "http://127.0.0.1:6588",
     // Rise error if can't reach geth in this amount of time
     "timeout": "10s",
     // Address with pool coinbase wallet address.
@@ -248,21 +248,9 @@ presetup configs are in configs directory, edit to suit your needs
   }
 }
 ```
-### Run the service installer
-    edit the top of the "service_installer.sh"
-//your user you plan to use for the coin, could be the coin name for instance
-user="brian"
-//the name of the coin, used to make the services match the coins name
-coin="pirl"
-//the location of the config files if you moved them
-config_dir="/home/$user/cryptopools.info-pools/configs"
-//the default name of the built pool binary, it will rename it to pirl for you.
-poolbinary="/home/$user/cryptopools.info-pools/build/bin/open-callisto-pool"
-
-   when its edited, run with root user with ./service_installer.sh  or with sudo with sudo ./service_installer
-
-(installing services requires root level access)
-
+### install systemd service files
+     these are located in configs/systemd_files/
+     be sure to edit the ExecStart for your systems paths to the json configs, and the location of the built binary
 
 ### Open Firewall
 
@@ -273,36 +261,36 @@ You can open firewall by opening 80,443,8080,8888,8008.
 
 ### Modify configuration file
 
-    $ nano pirl.cryptopools.info/www/config/environment.js
+    $ nano official-pirl-testnet-pool/www/config/environment.js
 
 Make some modifications in these settings.
 
     APP: {
       // API host and port
-      ApiUrl: '//pirl.cryptopools.info/',
-      PoolName: 'PIRL Pool',
-      CompanyName: 'CryptoPools.info',
+      ApiUrl: '//testnetpool.pirl.io/',
+      PoolName: 'PIRL TESTNET Pool',
+      CompanyName: 'PIRL.IO',
       // HTTP mining endpoint
-      HttpHost: 'https://Pirl.CryptoPools.info',
+      HttpHost: 'https://testnetpool.pirl.io',
       HttpPort: 8882,
 
       // Stratum mining endpoint
-      StratumHost: 'Pirl.CryptoPools.info',
+      StratumHost: 'testnetpool.pirl.io',
       StratumPort: 8002,
 
       // Fee and payout details
-      PoolFee: '1.0%',
+      PoolFee: '0.0%',
       PayoutThreshold: '1.0',
       PayoutInterval: '3h',
 
       // For network hashrate (change for your favourite fork)
-      BlockTime: 14.0,
+      BlockTime: 13.0,
       BlockReward: 6,
       Unit: 'PIRL',
 
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
-    $ cd pirl.cryptopools.info/www
+    $ cd official-pirl-testnet-pool/www
     $ sudo npm install -g ember-cli@2.9.1
     $ sudo npm install -g bower
     $ sudo chown -R $USER:$GROUP ~/.npm
@@ -310,7 +298,7 @@ The frontend is a single-page Ember.js application that polls the pool API to re
     $ npm install
     $ bower install
     $ ./build.sh
-    $ note: the build script copies the contents of pirl.cryptopools.info/www/dist/ to ~/www
+    $ note: the build script copies the contents of official-pirl-testnet-pool/www/dist/ to /var/www/
 
 As you can see above, the frontend of the pool homepage is created. Then, move to the directory, www, which services the file.
 
@@ -330,7 +318,7 @@ Modify based on configuration file.
     server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        root /home/<your-user-name>/www;
+        root /var/www;
 
         # Add index.php to the list if you are using PHP
         index index.html index.htm index.nginx-debian.html;
