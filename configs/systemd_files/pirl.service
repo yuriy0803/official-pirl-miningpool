@@ -3,7 +3,7 @@ Description=Pirlnode for Pool
 After=network-online.target
 
 [Service]
-ExecStart=/home/centos/pirltestpool/node/pirl.1.8.1.2.testnet --rpc --nodiscover --rpcapi eth,net,web3 --unlock 0x747dc9d657936ffabad5835bc932c71809e94bff --password /home/centos/.walletpassword  --ethstats "testnetnode eu:testnet@devstats.pirl.io:3000"
+ExecStart=/home/centos/pirltestpool/node/pirl.1.8.1.2.testnet --rpc --nodiscover --rpcapi eth,net,web3 --unlock 0x747dc9d657936ffabad5835bc932c71809e94bff --password /home/centos/.walletpassword  --ethstats "your testnet nodename:testnet@devstats.pirl.io:3000"
 
 User=centos
 
