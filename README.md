@@ -4,30 +4,65 @@
 
 Dependencies:
 
+  * 64 bit ubuntu
+  * NOTE: centos can also work, but some of the commands may be different for the packages
   * go >= 1.10
+  * gcc-c++
+  * make
   * redis-server >= 2.8.0
   * nodejs >= 4 LTS
   * nginx
-  * geth (multi-geth)
+  * Pirl geth client
+  * recommended to have more then 2 GB of ram, or a swap file set, or compiling may fail. 
+  * if you need to make swap, you can run this to add a 3 gig swap file (not usually on openvz vps, it will fail most likely)
+ ```
+if [ ! -e /swapfile ]
+	then
+	fallocate -l 3G /swapfile
+	chmod 600 /swapfile
+	mkswap /swapfile
+	swapon /swapfile
+	cp /etc/fstab /etc/fstab.bak
+	echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+fi
+```
 
-**I highly recommend to use Ubuntu 16.04 LTS.**
+## note about conventions here, "$" means you are not root, "#" means you are root. ##
+
+### Update installed packages ###
+    $ sudo yum update
+    or
+    $ sudo apt-get dist-upgrade
 
 ### Install go lang
 
     $ sudo apt-get install -y build-essential golang-1.10-go unzip
+    or
+    $ yum install -y build-essential golang-1.10-go unzip
     $ sudo ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
 
 ### Install redis-server
+(easiest to use the packages from the OS vender)
 
     $ sudo apt-get install redis-server
+    or
+    $ sudo yum install redis-server
 
 It is recommended to bind your DB address on 127.0.0.1 or on internal ip. Also, please set up the password for advanced security!!!
 
 ### Install nginx
 
     $ sudo apt-get install nginx
+    or
+    $ sudo yum install nginx
 
 sample config located at configs/nginx.default.example (HINT, edit and move to /etc/nginx/sites-available/default)
+
+### Install gcc-c++ and make
+
+    $ sudo apt-get install gcc make
+    or
+    $ sudo yum install gcc make
 
 ### Install NODE
 
@@ -35,12 +70,15 @@ This will install the latest nodejs
 
     $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
+    or
+    $ sudo yum install -y nodejs
 
-### Install multi-geth
+### Install PIRL geth (with PIRL-GUARD) (regular binary, not the masternode binary)
+### download from https://git.pirl.io/community/pirl/tags/pirl-linux-amd64-hulk-1_8_2
 
-    $ wget https://github.com/ethereumsocial/multi-geth/releases/download/v1.8.10/multi-geth-linux-v1.8.10.zip
-    $ unzip multi-geth-linux-v1.8.10.zip
-    $ sudo mv geth /usr/local/bin/geth
+    $ wget https://git.pirl.io/community/pirl/uploads/f339ecb21997253a80fdbc534715fe0d/pirl-linux-amd64-hulk-1_8_2
+    $ chmod 0755 pirl-linux-amd64-hulk-1_8_2
+    $ sudo mv pirl-linux-amd64-hulk-1_8_2 /usr/local/bin/pirl-linux-amd64-hulk-1_8_2
 
 ### Install  Pool
 
@@ -49,7 +87,9 @@ This will install the latest nodejs
     $ make all
     $ ls build/bin/
 
-you should see open-callisto-pool binary there.
+you should see the pool binary there.
+#################stop here, until I can finish the pool code binary##############################
+
 
 ### Set up pool
 
