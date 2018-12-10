@@ -80,6 +80,9 @@ This will install the latest nodejs
     $ chmod 0755 pirl-linux-amd64-hulk-1_8_2
     $ sudo mv pirl-linux-amd64-hulk-1_8_2 /usr/local/bin/pirl-linux-amd64-hulk-1_8_2
 
+    $ optional: start the binary and sync the chain up.
+    $ ./usr/local/bin/pirl-linux-amd64-hulk-1_8_2  (control c when it reaches a blocks=1 each block line)
+
 ### Install  Pool
 
     $ git clone https://github.com/phatblinkie/official-pirl-testnet-pool.git
@@ -87,13 +90,11 @@ This will install the latest nodejs
     $ make all
     $ ls build/bin/
 
-you should see the pool binary there.
-#################stop here, until I can finish the pool code binary##############################
-
+	you should see the pool binary there.
 
 ### Set up pool
 
-presetup configs are in configs directory, edit to suit your needs
+presetup configs are in /configs directory, edit to suit your needs
 
 ```javascript
 {
