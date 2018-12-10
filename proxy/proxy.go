@@ -13,10 +13,10 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/chainkorea/open-callisto-pool/policy"
-	"github.com/chainkorea/open-callisto-pool/rpc"
-	"github.com/chainkorea/open-callisto-pool/storage"
-	"github.com/chainkorea/open-callisto-pool/util"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/policy"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/rpc"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/storage"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/util"
 )
 
 type ProxyServer struct {

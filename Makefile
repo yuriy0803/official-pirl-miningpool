@@ -8,6 +8,7 @@ GOBIN = build/bin
 
 all:
 	build/env.sh go get -v ./...
+#	@mv build/bin/open-callisto-pool build/bin/open-pirl-pool
 
 test: all
 	build/env.sh go test -v ./...

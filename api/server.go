@@ -13,9 +13,8 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/robfig/cron"
-
-	"github.com/chainkorea/open-callisto-pool/storage"
-	"github.com/chainkorea/open-callisto-pool/util"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/util"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/storage"
 )
 
 type ApiConfig struct {

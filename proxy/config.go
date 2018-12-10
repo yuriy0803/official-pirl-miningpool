@@ -1,10 +1,10 @@
 package proxy
 
 import (
-	"github.com/chainkorea/open-callisto-pool/api"
-	"github.com/chainkorea/open-callisto-pool/payouts"
-	"github.com/chainkorea/open-callisto-pool/policy"
-	"github.com/chainkorea/open-callisto-pool/storage"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/api"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/payouts"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/policy"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/storage"
 )
 
 type Config struct {

@@ -9,8 +9,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/chainkorea/open-callisto-pool/rpc"
-	"github.com/chainkorea/open-callisto-pool/util"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/rpc"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/util"
 )
 
 const maxBacklog = 3

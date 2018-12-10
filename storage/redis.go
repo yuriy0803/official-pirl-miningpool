@@ -10,7 +10,7 @@ import (
 
 	"gopkg.in/redis.v3"
 
-	"github.com/chainkorea/open-callisto-pool/util"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/util"
 )
 
 type Config struct {

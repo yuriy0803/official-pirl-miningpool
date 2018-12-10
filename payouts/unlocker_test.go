@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/chainkorea/open-callisto-pool/rpc"
-	"github.com/chainkorea/open-callisto-pool/storage"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/rpc"
+	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/storage"
 )
 
 func TestMain(m *testing.M) {
