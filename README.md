@@ -32,19 +32,21 @@ fi
 ### Update installed packages ###
     $ sudo yum update
     or
-    $ sudo apt-get dist-upgrade
+    $ sudo apt-get update
+    $ sudo apt-get -y dist-upgrade
 
 ### Install go lang
 
-    $ sudo apt-get install -y build-essential golang-1.10-go unzip
+    $ sudo apt-get install -y build-essential golang-1.10-go unzip git wget curl
+    $ sudo ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
     or
-    $ yum install -y build-essential golang-1.10-go unzip
+    $ yum install -y build-essential golang-1.10-go unzip git wget curl
     $ sudo ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
 
 ### Install redis-server
 (easiest to use the packages from the OS vender)
 
-    $ sudo apt-get install redis-server
+    $ sudo apt-get install -y redis-server
     or
     $ sudo yum install redis-server
 
@@ -60,7 +62,7 @@ sample config located at configs/nginx.default.example (HINT, edit and move to /
 
 ### Install gcc-c++ and make
 
-    $ sudo apt-get install gcc make
+    $ sudo apt-get -y install gcc make
     or
     $ sudo yum install gcc make
 
@@ -71,6 +73,7 @@ This will install the latest nodejs
     $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
     or
+    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     $ sudo yum install -y nodejs
 
 ### Install PIRL geth (with PIRL-GUARD) (regular binary, not the masternode binary)
@@ -81,7 +84,7 @@ This will install the latest nodejs
     $ sudo mv pirl-linux-amd64-hulk-1_8_2 /usr/local/bin/pirl-linux-amd64-hulk-1_8_2
 
     $ optional: start the binary and sync the chain up.
-    $ ./usr/local/bin/pirl-linux-amd64-hulk-1_8_2  (control c when it reaches a blocks=1 each block line)
+    $ /usr/local/bin/pirl-linux-amd64-hulk-1_8_2  (control c when it reaches a blocks=1 each block line)
 
 ### Install  Pool
 
@@ -221,12 +224,12 @@ presetup configs are in /configs directory, edit to suit your needs
   "upstream": [
     {
       "name": "main",
-      "url": "http://127.0.0.1:8545",
+      "url": "http://127.0.0.1:6588",
       "timeout": "10s"
     },
     {
       "name": "backup",
-      "url": "http://127.0.0.2:8545",
+      "url": "http://127.0.0.2:6588",
       "timeout": "10s"
     }
   ],
@@ -296,13 +299,13 @@ presetup configs are in /configs directory, edit to suit your needs
 ### Open Firewall
 
 Firewall should be opened to operate this service. Whether Ubuntu firewall is basically opened or not, the firewall should be opened based on your situation.
-You can open firewall by opening 80,443,8080,8888,8008.
+You can open firewall by opening port TCP:80,443,30303,8002,8004,8008  UDP:30303
 
 ## Install Frontend
 
 ### Modify configuration file
 
-    $ nano official-pirl-testnet-pool/www/config/environment.js
+    $ nano www/config/environment.js
 
 Make some modifications in these settings.
 
@@ -329,6 +332,7 @@ Make some modifications in these settings.
       BlockReward: 6,
       Unit: 'PIRL',
 
+### Install Frontend
 The frontend is a single-page Ember.js application that polls the pool API to render miner stats.
 
     $ cd official-pirl-testnet-pool/www
@@ -338,12 +342,13 @@ The frontend is a single-page Ember.js application that polls the pool API to re
     $ sudo chown -R $USER:$GROUP ~/.config
     $ npm install
     $ bower install
+    //if your going to run as root, you may need to run " bower install --allow-root "
     $ ./build.sh
     $ note: the build script copies the contents of official-pirl-testnet-pool/www/dist/ to /var/www/
 
-As you can see above, the frontend of the pool homepage is created. Then, move to the directory, www, which services the file.
 
-Set up nginx.
+### Install nginx configuration
+
     $ a sample config file for nginx is include in the configs directory copy it or edit as directed below
     $ sudo nano /etc/nginx/sites-available/default
 
@@ -385,7 +390,7 @@ After setting nginx is completed, run the command below.
 Type your homepage address or IP address on the web.
 If you face screen without any issues, pool installation has completed.
 
-### Extra) How To Secure the pool frontend with Let's Encrypt (https)
+### Extra How To Secure the pool frontend with Let's Encrypt (https)
 
 This guide was originally referred from [digitalocean - How To Secure Nginx with Let's Encrypt on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
@@ -426,11 +431,8 @@ Now you can access your pool's frontend via https! Share your pool link!
 ### Credits
 
 Made by sammy007. Licensed under GPLv3.
-Modified by Akira Takizawa & The Ellaism Project & phatblinkie and mohannad and the ethpool update project.
+Modified by Akira Takizawa & The Ellaism Project & phatblinkie and mohannad and the ethpool update project, & PIRL project
 
-#### Contributors
-
-[Alex Leverington](https://github.com/subtly)
 
 ### Donations
 
