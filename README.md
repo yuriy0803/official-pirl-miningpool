@@ -40,7 +40,8 @@ fi
     $ sudo apt-get install -y build-essential golang-1.10-go unzip git wget curl
     $ sudo ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
     or
-    $ yum install -y build-essential golang-1.10-go unzip git wget curl
+    $ sudo yum install -y epel-release
+    $ sudo yum install -y golang unzip git wget curl
     $ sudo ln -s /usr/lib/go-1.10/bin/go /usr/local/bin/go
 
 ### Install redis-server
@@ -48,7 +49,7 @@ fi
 
     $ sudo apt-get install -y redis-server
     or
-    $ sudo yum install redis-server
+    $ sudo yum install -y redis
 
 It is recommended to bind your DB address on 127.0.0.1 or on internal ip. Also, please set up the password for advanced security!!!
 
@@ -70,10 +71,10 @@ sample config located at configs/nginx.default.example (HINT, edit and move to /
 
 This will install the latest nodejs
 
-    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    $ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
     or
-    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    $ curl -sL https://rpm.nodesource.com/setup_11.x | sudo -E bash -
     $ sudo yum install -y nodejs
 
 ### Install PIRL geth (with PIRL-GUARD) (regular binary, not the masternode binary)
