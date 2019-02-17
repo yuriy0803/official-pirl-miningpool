@@ -42,8 +42,8 @@ type Session struct {
 
 	// Stratum
 	sync.Mutex
-	conn  *net.TCPConn
-	login string
+	conn    *net.TCPConn
+	login   string
 	lastErr error
 }
 
@@ -229,7 +229,13 @@ func (cs *Session) handleMessage(s *ProxyServer, r *http.Request, req *JSONRpcRe
 		cs.sendError(req.Id, errReply)
 		return
 	}
-
+	//saving for later, too broad, and is still ip based
+	//	if !s.policy.ApplyLoginWalletPolicy(login) {
+	//		// check to see if this wallet login is blocked
+	//		errReply := &ErrorReply{Code: -1, Message: "You are blacklisted"}
+	//		cs.sendError(req.Id, errReply)
+	//		return
+	//	}
 	// Handle RPC methods
 	switch req.Method {
 	case "eth_getWork":

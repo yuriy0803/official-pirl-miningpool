@@ -18,7 +18,7 @@
 
     "blockRefreshInterval": "120ms",
     "stateUpdateInterval": "3s",
-    "difficulty": 2000000000,
+    "difficulty": 200000000,
     "stratumHostname": "testnet node 1",
     "healthCheck": true,
     "maxFails": 100,
@@ -27,6 +27,7 @@
       "workers": 8,
       "resetInterval": "60m",
       "refreshInterval": "1m",
+      "blacklist_file" : "/root/official-pirl-testnet-pool/configs/stratum_blacklist.json",
       "banning": {
         "enabled": false,
         "ipset": "blacklist",

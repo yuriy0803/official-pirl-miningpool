@@ -1,10 +1,10 @@
 package proxy
 
 import (
+	"errors"
 	"log"
 	"regexp"
 	"strings"
-	"errors"
 
 	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/rpc"
 	"git.pirl.io/phatblinkie/official-pirl-testnet-pool/util"
@@ -28,6 +28,11 @@ func (s *ProxyServer) handleLoginRPC(cs *Session, params []string, id string) (b
 	if !s.policy.ApplyLoginPolicy(login, cs.ip) {
 		return false, &ErrorReply{Code: -1, Message: "You are blacklisted"}
 	}
+	//save for later, too broad right now, bans the ip the wallet comes from, (bad if more then one miner proxies there)
+	//	if !s.policy.ApplyLoginWalletPolicy(login) {
+	//		// check to see if this wallet login is blocked in json file
+	//		return false, &ErrorReply{Code: -1, Message: "You are blacklisted"}
+	//	}
 	cs.login = login
 	s.registerSession(cs)
 	log.Printf("Stratum miner connected %v@%v", login, cs.ip)
@@ -55,7 +60,7 @@ func (s *ProxyServer) handleTCPSubmitRPC(cs *Session, id string, params []string
 }
 
 func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []string) (bool, *ErrorReply) {
-	if !workerPattern.MatchString(id){
+	if !workerPattern.MatchString(id) {
 		id = "0"
 	}
 	if len(params) != 3 {
@@ -79,10 +84,10 @@ func (s *ProxyServer) handleSubmitRPC(cs *Session, login, id string, params []st
 		//		true,false		(Exists & invalid)which means share already exists and it is invalidShare or it is a block <-- should not ever happen
 		//		false,false		(stale/invalid)which means share is new, and it is not a block, might be a stale share or invalidShare
 		//		false,true		(valid)which means share is new, and it is a block or accepted share
+		//		false,false,false	(blacklisted wallet attached to share) see json file
 		//	When this function finishes, the results is already recorded in the db for valid shares or blocks.
 		exist, validShare := s.processShare(login, id, cs.ip, t, params)
 		ok := s.policy.ApplySharePolicy(cs.ip, !exist && validShare)
-
 
 		// if true,true or true,false
 		if exist {

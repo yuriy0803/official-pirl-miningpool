@@ -27,6 +27,7 @@
       "workers": 8,
       "resetInterval": "60m",
       "refreshInterval": "1m",
+      "blacklist_file" : "/root/official-pirl-testnet-pool/configs/stratum_blacklist.json",
       "banning": {
         "enabled": false,
         "ipset": "blacklist",
