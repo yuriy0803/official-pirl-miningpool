@@ -15,15 +15,15 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//testnetpool.pirl.io/',
-      PoolName: 'PIRL TESTNET Pool',
+      ApiUrl: '//pool.pirl.network/',
+      PoolName: 'PIRL OFFICIAL POOL',
       CompanyName: 'Pirl.io',
       // HTTP mining endpoint
-      HttpHost: 'https://testnetpool.pirl.io',
+      HttpHost: 'https://pool.pirl.network',
       HttpPort: 8882,
 
       // Stratum mining endpoint
-      StratumHost: 'testnetpool.pirl.io',
+      StratumHost: 'pool.pirl.network',
       StratumPort: 8002,
 
       // Fee and payout details
