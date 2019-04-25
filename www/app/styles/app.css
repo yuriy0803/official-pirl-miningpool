@@ -5,7 +5,7 @@ html {
   min-height: 100%;
 }
 body {
-  background: url('/bg.png');
+  /*background: url('/bg.png');
 }
 
 caption, th {
@@ -20,7 +20,7 @@ caption, th {
 body {
   padding-top: 20px;
   padding-bottom: 0px;
-  color: #D8D8D8;
+  color: #5B5B5C;
 }
 
 body > .container {
