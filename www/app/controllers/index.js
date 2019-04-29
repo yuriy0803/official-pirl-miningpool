@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
                 t = e.getWithDefault("stats.model.poolCharts"),
                 a = {
                     chart: {
-                        backgroundColor: "rgba(0, 0, 0, 0.1)",
+                        backgroundColor: "rgba(0, 0, 0, 0.0)",
                         type: "spline",
                         height: 300,
                         marginRight: 10,
@@ -36,15 +36,15 @@ export default Ember.Controller.extend({
                         }
                     },
                     title: {
-                        text: "Our pool's hashrate",
+                        text: "Hashrate",
                         style: {
-                            color: "#ccc"
+                            color: "#000"
                         }
                     },
                     xAxis: {
                         labels: {
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             }
                         },
                         ordinal: false,
@@ -52,22 +52,22 @@ export default Ember.Controller.extend({
                     },
                     yAxis: {
                         title: {
-                            text: "HASHRATE",
+                            text: "Hashrate",
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             }
                         },
                         min: 0,
                         labels: {
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             }
                         }
                     },
                     plotLines: [{
                         value: 0,
                         width: 1,
-                        color: "#ccc"
+                        color: "#000"
                     }],
                     legend: {
                         enabled: false
