@@ -211,7 +211,11 @@ func convertPoolChartsResults(raw *redis.ZSliceCmd) []*PoolCharts {
 		pc.PoolHash, _ = strconv.ParseInt(str[strings.LastIndex(str, ":")+1:], 10, 64)
 		result = append(result, &pc)
 	}
-	return result
+	var reverse []*PoolCharts
+	for i := len(result) - 1; i >= 0; i-- {
+		reverse = append(reverse, result[i])
+	}
+	return reverse
 }
 
 func convertMinerChartsResults(raw *redis.ZSliceCmd) []*MinerCharts {
@@ -227,7 +231,11 @@ func convertMinerChartsResults(raw *redis.ZSliceCmd) []*MinerCharts {
 		mc.WorkerOnline = strings.Split(str, ":")[4]
 		result = append(result, &mc)
 	}
-	return result
+	var reverse []*MinerCharts
+	for i := len(result) - 1; i >= 0; i-- {
+		reverse = append(reverse, result[i])
+	}
+	return reverse
 }
 
 func (r *RedisClient) GetAllMinerAccount() (account []string, err error) {
@@ -1300,7 +1308,11 @@ func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 		}
 		result = append(result, tx)
 	}
-	return result
+	var reverse []map[string]interface{}
+	for i := len(result) - 1; i >= 0; i-- {
+		reverse = append(reverse, result[i])
+	}
+	return reverse
 }
 
 /*
@@ -1331,7 +1343,11 @@ func convertPaymentChartsResults(raw *redis.ZSliceCmd) []*PaymentCharts {
 			result = append(result, &pc)
 		}
 	}
-	return result
+	var reverse []*PaymentCharts
+	for i := len(result) - 1; i >= 0; i-- {
+		reverse = append(reverse, result[i])
+	}
+	return reverse
 }
 
 func (r *RedisClient) GetCurrentHashrate(login string) (int64, error) {
