@@ -149,11 +149,11 @@ errors:
   message: Usually it's just a temporal issue and mining is not affected.
 
 links:
-  blockExplorerLink: 'https://poseidon.pirl.io/explorer/'
-  blockExplorerLink_tx: 'https://poseidon.pirl.io/explorer/transaction/'
-  blockExplorerLink_uncle: 'https://poseidon.pirl.io/explorer/block/'
-  blockExplorerLink_block: 'https://poseidon.pirl.io/explorer/block/'
-  blockExplorerLink_address: 'https://poseidon.pirl.io/explorer/address/'
+  blockExplorerLink: 'https://explorer.pirl.network/'
+  blockExplorerLink_tx: 'https://explorer.pirl.network/tx/'
+  blockExplorerLink_uncle: 'https://explorer.pirl.network/uncles/'
+  blockExplorerLink_block: 'https://explorer.pirl.network/blocks/'
+  blockExplorerLink_address: 'https://explorer.pirl.network/address/'
 
 footer:
   copyrights: '&copy; Brought to you from the team @ <a href="http://Pirl.io" target="_blank">Pirl.io</a>'

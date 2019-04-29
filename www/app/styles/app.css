@@ -19,7 +19,6 @@ caption, th {
 
 body {
   padding-top: 20px;
-  padding-bottom: 0px;
   color: #5B5B5C;
 }
 
@@ -75,9 +74,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 40px;
 }
 
+
 .jumbotron {
 	margin: 0;
-	padding: 40px 0 15px 0;
+	padding: 140px 0 15px 0;
 	margin-bottom: 15px;
 }
 
