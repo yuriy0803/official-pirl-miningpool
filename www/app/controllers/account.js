@@ -41,12 +41,20 @@ export default Ember.Controller.extend({
                             week: "%e. %b",
                             month: "%b '%y",
                             year: "%Y"
-                        }
+                        },
+                         style: {
+                             color: "#000"
+                            }
+
                     },
                     yAxis: {
                         title: {
-                            text: "HASHRATE"
+                            text: "HASHRATE",
+                            style: {
+                                color: "#000"
+                            }
                         },
+
                         min: 0
                     },
                     plotLines: [{

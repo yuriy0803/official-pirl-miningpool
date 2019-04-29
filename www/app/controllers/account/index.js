@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
                 t = e.getWithDefault("model.minerCharts"),
                 a = {
                     chart: {
-                        backgroundColor: "rgba(0, 0, 0, 0.1)",
+                        backgroundColor: "rgba(0, 0, 0, 0.0)",
 
                         type: "spline",
                         marginRight: 10,
@@ -29,13 +29,17 @@ export default Ember.Controller.extend({
                         }
                     },
                     title: {
-                        text: ""
+                        text: "Your hashrate",
+                        style: {
+                            color: "#000"
+                        }
                     },
+
                     xAxis: {
                         ordinal: false,
                         labels: {
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             }
                         },
                         type: "datetime",
@@ -52,14 +56,14 @@ export default Ember.Controller.extend({
                     },
                     yAxis: {
                         title: {
-                            text: "Hashrate by Account",
+                            text: "Account hashrate",
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             },
                         },
                         labels: {
                             style: {
-                                color: "#ccc"
+                                color: "#000"
                             }
                         },
                         //softMin: e.getWithDefault("model.currentHashrate") / 1000000,
@@ -68,13 +72,13 @@ export default Ember.Controller.extend({
                     plotLines: [{
                         value: 0,
                         width: 1,
-                        color: "#aaaaaa"
+                        color: "#000"
                     }],
                     legend: {
                         enabled: true,
                         itemStyle:
                           {
-                            color:"#ccc"
+                            color:"#000"
                           },
                     },
                     tooltip: {

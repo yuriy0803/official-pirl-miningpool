@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
             t = e.getWithDefault("model.paymentCharts"),
             a = {
                 chart: {
-                    backgroundColor: "rgba(0, 0, 0, 0.1)",
+                    backgroundColor: "rgba(0, 0, 0, 0.0)",
                     type: "column",
                     marginRight: 10,
                     height: 200,
@@ -36,9 +36,13 @@ export default Ember.Controller.extend({
                         }
                     }
                 },
-                title: {
-                    text: ""
-                },
+               title: {
+                   text: "Your payments",
+                        style: {
+                            color: "#000"
+                            },
+                        },
+
                 xAxis: {
                     ordinal: false,
                     type: "datetime",
@@ -50,20 +54,24 @@ export default Ember.Controller.extend({
                     }
                 },
                 yAxis: {
-                    title: {
-                        text: "Payment by Account"
-                    }
+                        title: {
+                            text: "Account payment",
+                            style: {
+                                color: "#000"
+                            },
+                        },
+
                 },
                 plotLines: [{
                     value: 0,
                     width: 1,
-                    color: "#808080"
+                    color: "#000"
                 }],
                 legend: {
                     enabled: true,
                     itemStyle:
                       {
-                        color:"#ccc"
+                        color:"#000"
                       },
                 },
                 tooltip: {
