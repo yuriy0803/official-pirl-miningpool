@@ -1,0 +1,150 @@
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #fff;
+    background-color: #000000cf;
+    box-shadow: 0 -1px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.navbar-default .navbar-toggle {
+    border-color: #000000;
+}
+.navbar-toggle {
+    padding: 9px 10px;
+    background-color: #0000;
+    border: 1px solid transparent;
+}
+.navbar-default .navbar-brand {
+    color: #e5e5e5;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    color: #e5e5e5;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #000000;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #000000;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #fff;
+    font-weight: bold;
+    background-color: transparent;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,.16), 0 0px 0px 0 rgba(0,0,0,.12);}
+.dropdown-menu {
+    font-size: 14px;
+    background-color: #303030;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.dropdown-menu>li>a {
+    clear: both;
+    font-weight: 400;
+    color: #fff;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #000000;
+}
+.alert-info {
+    color: #5cb85b;
+    font-weight: bold;
+    background-color: #303030;
+    border-color: #4f4f4f;
+}
+
+.jumbotron {
+    color: #dedede;
+    background-color: #1b1b1b;
+    border-bottom: 3px solid #5cb85b;
+}
+.img-thumbnail, body {
+    background-color: #1b1b1bcc;
+}
+.form-control {
+    background-color: #1b1b1b;
+    border: 1px solid #5cb85b7a;
+}
+.form-control:focus {
+    border-color: #5cb85b;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.btn-primary {
+    color: #fff;
+    border-color: #3b663b;
+}
+.bg-primary, .btn-primary {
+    background-color: #1b1b1b;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #fff;
+    background-color: #0c0c0c;
+    border-color: #5e5e5e;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+body {
+    color: #fff;
+}
+code {
+    color: #5cb85b;
+    background-color: #1b1b1b;
+    font-weight: 900;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #fbfbfb;
+    font-weight: bold;
+    background-color: #ffffff00;
+    border: 1px solid #fff;
+    border-bottom-color: transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #252525;
+    color: #fff;
+}
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #000000cf;
+    border-color: #000;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #cacaca;
+    background: #303030;
+}
+.form-control, output { font-size: 14px; line-height: 1.42857143; display: block; color: #fff; }
+.navbar-default {
+    background-color: #484848;
+    border-color: #5cb85b;
+}
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #000000;
+    border-color: #15bd28;
+}
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #000000;
+    border-color: #5cb85b;
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #313131;
+}
+a:focus, a:hover {
+    color: #407f3f;
+    text-decoration: underline;
+}
+.worker-class {
+color:#000;
+}
