@@ -80,16 +80,16 @@ This will install the latest nodejs
 ### Install PIRL geth (with PIRL-GUARD) (regular binary, not the masternode binary)
 ### download from https://git.pirl.io/community/pirl/tags/pirl-linux-amd64-hulk-1_8_2
 
-    $ wget https://git.pirl.io/community/pirl/uploads/64bbf8b91bff94167cfc428ad5066f5e/pirl-linux-amd64-1.8.27-damocles
-    $ chmod 0755 pirl-linux-amd64-1.8.27-damocles
-    $ sudo mv pirl-linux-amd64-hulk-1_8_2 /usr/local/bin/pirl-linux-amd64-1.8.27-damocles
+    $ wget https://chaindata.pirl.network/1-9-12-lion/pirl-1-9-12-lion
+    $ chmod 0755 pirl-1-9-12-lion
+    $ sudo mv pirl-1-9-12-lion /usr/local/bin/pirl-linux-amd64-1.8.27-damocles
 
     $ optional: start the binary and sync the chain up.
-    $ /usr/local/bin/pirl-linux-amd64-1.8.27-damocles  (control c when it reaches a blocks=1 each block line)
+    $ /usr/local/bin/pirl-1-9-12-lion  (control c when it reaches a blocks=1 each block line)
 
 ### Install  Pool
 
-    $ git clone https://github.com/phatblinkie/official-pirl-testnet-pool.git
+    $ git clone https://git.pirl.io/community/official-pirl-pool.git
     $ cd official-pirl-testnet-pool
     $ make all
     $ ls build/bin/
