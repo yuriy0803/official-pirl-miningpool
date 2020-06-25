@@ -78,7 +78,7 @@ This will install the latest nodejs
     $ sudo yum install -y nodejs
 
 ### Install PIRL geth (with PIRL-GUARD) (regular binary, not the masternode binary)
-### download from https://git.pirl.io/community/pirl/tags/pirl-linux-amd64-hulk-1_8_2
+### download from https://git.pirl.io/community/pirl/-/releases/1.9.12-lion
 
     $ wget https://chaindata.pirl.network/1-9-12-lion/pirl-1-9-12-lion
     $ chmod 0755 pirl-1-9-12-lion
