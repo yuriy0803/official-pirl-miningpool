@@ -82,7 +82,7 @@ This will install the latest nodejs
 
     $ wget https://chaindata.pirl.network/1-9-12-lion/pirl-1-9-12-lion
     $ chmod 0755 pirl-1-9-12-lion
-    $ sudo mv pirl-1-9-12-lion /usr/local/bin/pirl-linux-amd64-1.8.27-damocles
+    $ sudo mv pirl-1-9-12-lion /usr/local/bin/pirl-1-9-12-lion
 
     $ optional: start the binary and sync the chain up.
     $ /usr/local/bin/pirl-1-9-12-lion  (control c when it reaches a blocks=1 each block line)
