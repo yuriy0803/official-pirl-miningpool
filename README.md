@@ -1,3 +1,5 @@
+# THIS VERSION OF PIRL IS DEPRECIATED, WE HAVE MOVED TO NPOS PROTOCOL
+
 ## Open Source Mining Pool
 
 ### Building on Linux
